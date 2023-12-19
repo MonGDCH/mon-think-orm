@@ -1,0 +1,23 @@
+{
+    "name": "mongdch/mon-think-orm",
+    "description": "封装的think-orm",
+    "keywords": ["orm", "think"],
+    "homepage": "http://gdmon.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mon",
+            "email": "985558837@qq.com",
+            "homepage": "http://www.gdmon.com/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "topthink/think-orm": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "mon\\thinkOrm\\": "src"
+        }
+    }
+}
