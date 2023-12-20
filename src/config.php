@@ -7,7 +7,6 @@
 | 定义数据库配置信息
 |
 */
-
 return [
     // 默认数据连接标识
     'default' => 'mysql',
@@ -47,12 +46,16 @@ return [
             'fields_strict'     => true,
             // 自动写入时间戳字段
             'auto_timestamp'    => false,
+            // 不自动格式化时间戳
+            'datetime_format'   => false,
             // 断线重连
             'break_reconnect'   => true,
             // 是否开启字段缓存
             'fields_cache'      => false,
             // 是否开启SQL监听，默认关闭，如需要开启，则需要调用 Db::setLog 注入日志记录对象，否则常驻进程长期运行会爆内存
             'trigger_sql'       => false,
+            // 自定义查询类，支持Dao对象调用
+            'query'             => \mon\thinkOrm\extend\Query::class,
         ],
     ],
 ];
