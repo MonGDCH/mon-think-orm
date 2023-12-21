@@ -11,6 +11,7 @@ use mon\thinkOrm\extend\Query;
 use mon\thinkOrm\concern\AutoAttr;
 use mon\thinkOrm\concern\AutoTime;
 use mon\thinkOrm\concern\Validator;
+use mon\thinkOrm\contract\DaoQuery;
 
 /**
  * Db操作Dao对象
@@ -152,8 +153,8 @@ abstract class Dao
             $db = Db::table($this->getTable());
         }
         // 绑定Dao对象
-        if (!method_exists($db, 'dao')) {
-            throw new RuntimeException('Query查询对象必须实现dao方法，需要配置自定义查询类[' . Query::class . ']实现');
+        if (!is_a($db, DaoQuery::class)) {
+            throw new RuntimeException('Query查询对象必须实现[' . DaoQuery::class . ']接口，可配置自定义查询类[' . Query::class . ']实现');
         }
 
         return $db->dao($this);

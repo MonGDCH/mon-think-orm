@@ -6,7 +6,7 @@ namespace mon\thinkOrm\extend;
 
 use mon\thinkOrm\Dao;
 use RuntimeException;
-use think\db\Query as DbQuery;
+use mon\thinkOrm\contract\DaoQuery;
 
 /**
  * 自定义扩展的查询类
@@ -14,7 +14,7 @@ use think\db\Query as DbQuery;
  * @author Mon <985558837@qq.com>
  * @version 1.0.0
  */
-class Query extends DbQuery
+class Query extends \think\db\Query implements DaoQuery
 {
     /**
      * Dao对象
