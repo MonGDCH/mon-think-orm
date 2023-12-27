@@ -197,11 +197,12 @@ abstract class Dao
     /**
      * 获取一条数据
      *
-     * @param  array $where where条件
-     * @param  Query $query 查询对象实例
+     * @param  Query    $query  查询对象实例
+     * @param  array    $where  where条件
+     * @param  boolean  $format 是否加工处理数据
      * @return array
      */
-    public function get(array $where = [], Query $query = null): array
+    public function get(bool $format = false, array $where = [], Query $query = null): array
     {
         // 获取查询对象实例
         if (!$query) {
@@ -213,17 +214,18 @@ abstract class Dao
             return [];
         }
 
-        return $this->getDaoData($data);
+        return $format ? $this->getDaoData($data) : $data;
     }
 
     /**
      * 获取多条数据
      *
-     * @param  array  $where    where条件
-     * @param  Query  $query 查询对象实例
+     * @param  boolean  $format 是否加工处理数据
+     * @param  array    $where  where条件
+     * @param  Query    $query  查询对象实例
      * @return array
      */
-    public function all(array $where = [], Query $query = null): array
+    public function all(bool $format = false, array $where = [], Query $query = null): array
     {
         // 获取查询对象实例
         if (!$query) {
@@ -235,11 +237,13 @@ abstract class Dao
         }
 
         $result = [];
-        foreach ($data as $k => $value) {
-            $result[$k] = $this->getDaoData($value);
+        if ($format) {
+            foreach ($data as $k => $value) {
+                $result[$k] = $this->getDaoData($value);
+            }
         }
 
-        return $result;
+        return $format ? $result : $data->toArray();
     }
 
     /**

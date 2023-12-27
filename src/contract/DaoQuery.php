@@ -67,16 +67,18 @@ interface DaoQuery
     /**
      * Dao对象get获取单条数据方法支持
      *
+     * @param  boolean  $format 是否加工处理数据
      * @param  array $where where条件
      * @return array
      */
-    public function get(array $where = []): array;
+    public function get(bool $format = false, array $where = []): array;
 
     /**
      * Dao对象all获取多条数据方法支持
      *
+     * @param  boolean  $format 是否加工处理数据
      * @param  array $where where条件
      * @return array
      */
-    public function all(array $where = []): array;
+    public function all(bool $format = false, array $where = []): array;
 }

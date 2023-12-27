@@ -122,29 +122,31 @@ class Query extends \think\db\Query implements DaoQuery
      * Dao对象get获取单条数据方法支持
      *
      * @param  array $where where条件
+     * @param  boolean  $format 是否加工处理数据
      * @return array
      */
-    public function get(array $where = []): array
+    public function get(bool $format = false, array $where = []): array
     {
         if (!$this->getDao()) {
             throw new RuntimeException('查询对象未绑定Dao对象');
         }
 
-        return call_user_func_array([$this->getDao(), 'get'], [$where, $this]);
+        return call_user_func_array([$this->getDao(), 'get'], [$format, $where, $this]);
     }
 
     /**
      * Dao对象all获取多条数据方法支持
      *
      * @param  array $where where条件
+     * @param  boolean  $format 是否加工处理数据
      * @return array
      */
-    public function all(array $where = []): array
+    public function all(bool $format = false, array $where = []): array
     {
         if (!$this->getDao()) {
             throw new RuntimeException('查询对象未绑定Dao对象');
         }
 
-        return call_user_func_array([$this->getDao(), 'all'], [$where, $this]);
+        return call_user_func_array([$this->getDao(), 'all'], [$format, $where, $this]);
     }
 }
