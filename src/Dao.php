@@ -60,8 +60,6 @@ use mon\thinkOrm\contract\DaoQuery;
  * @method integer delete(mixed $data = null) 删除记录
  * @method boolean chunk(integer $count, callable $callback, string $column = null) 分块获取数据
  * @method \Generator cursor(mixed $data = null) 使用游标查找记录
- * @method mixed query(string $sql, array $bind = [], boolean $master = false, bool $pdo = false) SQL查询
- * @method integer execute(string $sql, array $bind = [], boolean $fetch = false, boolean $getLastInsID = false, string $sequence = null) SQL执行
  * @method mixed transaction(callable $callback) 执行数据库事务
  * @method void startTrans() 启动事务
  * @method void commit() 用于非自动提交状态下面的查询提交
@@ -158,6 +156,39 @@ abstract class Dao
         }
 
         return $db->dao($this);
+    }
+
+    /**
+     * 执行查询 返回数据集
+     *
+     * @param string  $sql    sql指令
+     * @param array   $bind   参数绑定
+     * @param boolean $master 主库读取
+     * @return array
+     */
+    public function query(string $sql, array $bind = [], bool $master = false): array
+    {
+        if ($this->getConnection()) {
+            return Db::connect($this->getConnection())->query($sql, $bind, $master);
+        }
+
+        return Db::query($sql, $bind, $master);
+    }
+
+    /**
+     * 执行语句
+     *
+     * @param string $sql  sql指令
+     * @param array  $bind 参数绑定
+     * @return integer
+     */
+    public function execute(string $sql, array $bind = []): int
+    {
+        if ($this->getConnection()) {
+            return Db::connect($this->getConnection())->execute($sql, $bind);
+        }
+
+        return Db::execute($sql, $bind);
     }
 
     /**

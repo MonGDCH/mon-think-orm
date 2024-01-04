@@ -63,7 +63,7 @@ namespace think\facade {
      * @method static void log(string $log, string $type = 'sql') 记录SQL日志
      * @method static array getDbLog(bool $clear = false) 获得查询日志（没有设置日志对象使用）
      * @method static mixed getConfig(string $name = '', $default = null) 获取配置参数
-     * @method static \think\db\ConnectionInterface connect(string $name = null, bool $force = false) 创建/切换数据库连接查询
+     * @method static \think\db\PDOConnection connect(string $name = null, bool $force = false) 创建/切换数据库连接查询
      * @method static \think\db\Raw raw(string $value) 使用表达式设置数据
      * @method static void listen(callable $callback) 监听SQL执行
      * @method static array getListen() 获取监听SQL执行
@@ -139,7 +139,7 @@ namespace think {
      * @method void log(string $log, string $type = 'sql') 记录SQL日志
      * @method array getDbLog(bool $clear = false) 获得查询日志（没有设置日志对象使用）
      * @method mixed getConfig(string $name = '', $default = null) 获取配置参数
-     * @method \think\db\ConnectionInterface connect(string $name = null, bool $force = false) 创建/切换数据库连接查询
+     * @method \think\db\PDOConnection connect(string $name = null, bool $force = false) 创建/切换数据库连接查询
      * @method \think\db\Raw raw(string $value) 使用表达式设置数据
      * @method void listen(callable $callback) 监听SQL执行
      * @method array getListen() 获取监听SQL执行
