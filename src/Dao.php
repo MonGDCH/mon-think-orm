@@ -350,11 +350,11 @@ abstract class Dao
     /**
      * 动态调用
      * 
-     * @param  mixed $method 回调方法
+     * @param  string $method 回调方法
      * @param  mixed $args   参数
      * @return mixed
      */
-    public function __call($method, $args)
+    public function __call(string $method, $args)
     {
         return call_user_func_array([$this->db(), $method], (array) $args);
     }
@@ -362,11 +362,11 @@ abstract class Dao
     /**
      * 静态调用
      *
-     * @param  mixed $method 回调方法
+     * @param  string $method 回调方法
      * @param  mixed $args   参数
      * @return mixed
      */
-    public static function __callStatic($method, $args)
+    public static function __callStatic(string $method, $args)
     {
         return call_user_func_array([(new static())->db(), $method], (array) $args);
     }
