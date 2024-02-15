@@ -42,8 +42,8 @@ trait AutoTime
 
     /**
      * 是否需要自动写入时间字段
-     * @access public
-     * @param  bool|string $auto
+     *
+     * @param  boolean $auto
      * @return static
      */
     public function isAutoWriteTimestamp(bool $auto)

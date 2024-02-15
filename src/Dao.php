@@ -24,7 +24,6 @@ use mon\thinkOrm\contract\DaoQuery;
  * @method Query where(mixed $field, string $op = null, mixed $condition = null) 查询条件
  * @method Query whereOr($field, $op = null, $condition = null) 指定OR查询条件
  * @method Query whereExp(string $field, string $condition, array $bind = []) 字段表达式查询
- * @method Query when(mixed $condition, mixed $query, mixed $otherwise = null) 条件查询
  * @method Query join(mixed $join, mixed $condition = null, string $type = 'INNER') JOIN查询
  * @method Query view(mixed $join, mixed $field = null, mixed $on = null, string $type = 'INNER') 视图查询
  * @method Query field(mixed $field, boolean $except = false) 指定查询字段
@@ -38,6 +37,7 @@ use mon\thinkOrm\contract\DaoQuery;
  * @method Query force(string $force) 指定强制索引
  * @method Query replace(bool $replace = true) 设置是否REPLACE
  * @method Query partition($partition) 设置当前查询所在的分区
+ * @method Query extra($extra) 设置extra
  * @method Query duplicate($duplicate) 设置DUPLICATE
  * @method Query cache(mixed $key = null , integer $expire = null) 设置查询缓存
  * @method Query procedure(bool $procedure = true) 是否存储过程调用

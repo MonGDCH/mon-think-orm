@@ -8,11 +8,10 @@ use Throwable;
 use mon\env\Config;
 use think\facade\Db;
 use think\DbManager;
-use think\Container;
 use Workerman\Timer;
+use mon\util\Container;
 use Psr\Log\LoggerInterface;
 use Psr\SimpleCache\CacheInterface;
-use mon\util\Container as MonContainer;
 
 /**
  * ORM注册使用工具
@@ -60,9 +59,7 @@ class ORM
     public static function heart(int $timer = 55)
     {
         if (class_exists(Container::class, false)) {
-            $manager_instance = Container::getInstance()->make(DbManager::class);
-        } elseif (class_exists(MonContainer::class, false)) {
-            $manager_instance = MonContainer::instance()->make(DbManager::class);
+            $manager_instance = Container::instance()->make(DbManager::class);
         } else {
             $reflect = new \ReflectionClass(Db::class);
             $property = $reflect->getProperty('instance');

@@ -11,7 +11,6 @@ namespace think\facade {
      * @method static \think\db\Query where(mixed $field, string $op = null, mixed $condition = null) 查询条件
      * @method static \think\db\Query whereOr($field, $op = null, $condition = null) 指定OR查询条件
      * @method static \think\db\Query whereExp(string $field, string $condition, array $bind = []) 字段表达式查询
-     * @method static \think\db\Query when(mixed $condition, mixed $query, mixed $otherwise = null) 条件查询
      * @method static \think\db\Query join(mixed $join, mixed $condition = null, string $type = 'INNER') JOIN查询
      * @method static \think\db\Query view(mixed $join, mixed $field = null, mixed $on = null, string $type = 'INNER') 视图查询
      * @method static \think\db\Query field(mixed $field, boolean $except = false) 指定查询字段
@@ -25,6 +24,7 @@ namespace think\facade {
      * @method static \think\db\Query force(string $force) 指定强制索引
      * @method static \think\db\Query replace(bool $replace = true) 设置是否REPLACE
      * @method static \think\db\Query partition($partition) 设置当前查询所在的分区
+     * @method static \think\db\Query extra($extra) 设置extra
      * @method static \think\db\Query duplicate($duplicate) 设置DUPLICATE
      * @method static \think\db\Query cache(mixed $key = null , integer $expire = null) 设置查询缓存
      * @method static \think\db\Query procedure(bool $procedure = true) 是否存储过程调用
@@ -101,6 +101,7 @@ namespace think {
      * @method \think\db\Query force(string $force) 指定强制索引
      * @method \think\db\Query replace(bool $replace = true) 设置是否REPLACE
      * @method \think\db\Query partition($partition) 设置当前查询所在的分区
+     * @method \think\db\Query extra($extra) 设置extra
      * @method \think\db\Query duplicate($duplicate) 设置DUPLICATE
      * @method \think\db\Query cache(mixed $key = null , integer $expire = null) 设置查询缓存
      * @method \think\db\Query procedure(bool $procedure = true) 是否存储过程调用
@@ -189,6 +190,7 @@ namespace think {
      * @method \think\db\Query force(string $force) 指定强制索引
      * @method \think\db\Query replace(bool $replace = true) 设置是否REPLACE
      * @method \think\db\Query partition($partition) 设置当前查询所在的分区
+     * @method \think\db\Query extra($extra) 设置extra
      * @method \think\db\Query duplicate($duplicate) 设置DUPLICATE
      * @method \think\db\Query cache(mixed $key = null , integer $expire = null) 设置查询缓存
      * @method \think\db\Query procedure(bool $procedure = true) 是否存储过程调用

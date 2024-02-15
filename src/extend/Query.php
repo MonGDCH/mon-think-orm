@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace mon\thinkOrm\extend;
 
-use mon\thinkOrm\Dao;
 use RuntimeException;
+use mon\thinkOrm\Dao;
 use mon\thinkOrm\contract\DaoQuery;
 
 /**

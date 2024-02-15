@@ -14,17 +14,17 @@ return [
     'connections' => [
         'mysql' => [
             // 数据库类型
-            'type'              => 'mysql',
+            'type'              => env('DB_TYPE', 'mysql'),
             // 服务器地址
-            'hostname'          => '127.0.0.1',
+            'hostname'          => env('DB_HOST', '127.0.0.1'),
             // 数据库名
-            'database'          => '',
+            'database'          => env('DB_NAME', ''),
             // 数据库用户名
-            'username'          => '',
+            'username'          => env('DB_USER', ''),
             // 数据库密码
-            'password'          => '',
+            'password'          => env('DB_PASSWORD', ''),
             // 数据库连接端口
-            'hostport'          => '3306',
+            'hostport'          => env('DB_PORT', 3306),
             // 数据库连接参数
             'params'            => [
                 // 连接超时3秒
