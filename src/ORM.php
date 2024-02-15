@@ -6,10 +6,10 @@ namespace mon\thinkOrm;
 
 use Throwable;
 use mon\env\Config;
+use Workerman\Timer;
 use think\facade\Db;
 use think\DbManager;
-use Workerman\Timer;
-use mon\util\Container;
+use think\Container;
 use Psr\Log\LoggerInterface;
 use Psr\SimpleCache\CacheInterface;
 
@@ -31,7 +31,7 @@ class ORM
      * @param integer $timer    长链接轮询时间间隔
      * @return void
      */
-    public static function register(bool $longLink = false, array $config = [], LoggerInterface $log = null, CacheInterface $cache = null, int $timer = 55)
+    public static function register(bool $longLink = false, array $config = [], ?LoggerInterface $log = null, ?CacheInterface $cache = null, int $timer = 55)
     {
         // 定义配置
         $config = $config ?: Config::instance()->get('database', []);
@@ -59,7 +59,7 @@ class ORM
     public static function heart(int $timer = 55)
     {
         if (class_exists(Container::class, false)) {
-            $manager_instance = Container::instance()->make(DbManager::class);
+            $manager_instance = Container::getInstance()->make(DbManager::class);
         } else {
             $reflect = new \ReflectionClass(Db::class);
             $property = $reflect->getProperty('instance');
