@@ -76,8 +76,8 @@ class ORM
                 $property->setAccessible(true);
                 $instances = $property->getValue($manager_instance);
             }
+            /**  @var \think\db\connector\Mysql $connection */
             foreach ($instances as $connection) {
-                /**  @var \think\db\connector\Mysql $connection */
                 if (in_array($connection->getConfig('type'), ['mysql', 'oracle', 'sqlsrv'])) {
                     try {
                         $connection->query('SELECT 1');
