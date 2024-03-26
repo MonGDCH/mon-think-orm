@@ -55,7 +55,7 @@ return [
             // 是否开启SQL监听，默认关闭，如需要开启，则需要调用 Db::setLog 注入日志记录对象，否则常驻进程长期运行会爆内存
             'trigger_sql'       => false,
             // 自定义查询类，支持Dao对象调用
-            'query'             => \mon\thinkOrm\extend\Query::class,
+            'query'             => \mon\thinkORM\extend\Query::class,
         ],
     ],
 ];
