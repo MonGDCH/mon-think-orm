@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace mon\thinkOrm;
+namespace mon\thinkORM;
 
 use support\Plugin;
 
@@ -35,6 +35,7 @@ class Install
      */
     public static function install()
     {
+        echo 'mon-think-orm installation successful, please execute `php gaia vendor:publish mon\thinkORM`' . PHP_EOL;
     }
 
     /**
@@ -44,6 +45,7 @@ class Install
      */
     public static function update()
     {
+        echo 'mon-think-orm upgrade successful, please execute `php gaia vendor:publish mon\thinkORM`' . PHP_EOL;
     }
 
     /**

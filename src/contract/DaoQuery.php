@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace mon\thinkOrm\contract;
+namespace mon\thinkORM\contract;
 
-use mon\thinkOrm\Dao;
+use mon\thinkORM\Dao;
 
 /**
  * Dao对象Query类接口

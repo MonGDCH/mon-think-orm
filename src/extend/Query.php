@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace mon\thinkOrm\extend;
+namespace mon\thinkORM\extend;
 
 use RuntimeException;
-use mon\thinkOrm\Dao;
-use mon\thinkOrm\contract\DaoQuery;
+use mon\thinkORM\Dao;
+use mon\thinkORM\contract\DaoQuery;
 
 /**
  * 自定义扩展的查询类

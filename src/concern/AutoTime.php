@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace mon\thinkOrm\concern;
+namespace mon\thinkORM\concern;
 
 /**
  * 自动时间戳

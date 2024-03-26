@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace mon\thinkOrm;
+namespace mon\thinkORM;
 
 use Closure;
 use think\facade\Db;
 use RuntimeException;
-use mon\thinkOrm\extend\Query;
-use mon\thinkOrm\concern\AutoAttr;
-use mon\thinkOrm\concern\AutoTime;
-use mon\thinkOrm\concern\Validator;
-use mon\thinkOrm\contract\DaoQuery;
+use mon\thinkORM\extend\Query;
+use mon\thinkORM\concern\AutoAttr;
+use mon\thinkORM\concern\AutoTime;
+use mon\thinkORM\concern\Validator;
+use mon\thinkORM\contract\DaoQuery;
 
 /**
  * Db操作Dao对象

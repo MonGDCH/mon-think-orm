@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace mon\thinkOrm\concern;
+namespace mon\thinkORM\concern;
 
-use mon\thinkOrm\extend\Query;
+use mon\thinkORM\extend\Query;
 
 /**
  * 自动完成

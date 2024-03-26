@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace mon\thinkOrm;
+namespace mon\thinkORM;
 
 use Throwable;
 use mon\env\Config;
