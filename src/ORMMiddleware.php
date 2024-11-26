@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace mon\thinkORM;
 
 use Closure;
+use think\Container;
 use RuntimeException;
 use mon\http\Response;
-use think\facade\Db as ThinkDb;
-use think\DbManager as ThinkDBM;
-use think\Container as ThinkContainer;
+use mon\thinkORM\extend\DbManager;
 use mon\http\interfaces\RequestInterface;
 use mon\http\interfaces\MiddlewareInterface;
 
@@ -49,10 +48,10 @@ class ORMMiddleware implements MiddlewareInterface
     {
         static $property, $manager_instance;
         if (!$property) {
-            if (class_exists(ThinkContainer::class, false)) {
-                $manager_instance = ThinkContainer::getInstance()->make(ThinkDBM::class);
+            if (class_exists(Container::class, false)) {
+                $manager_instance = Container::getInstance()->make(DbManager::class);
             } else {
-                $reflect = new \ReflectionClass(ThinkDb::class);
+                $reflect = new \ReflectionClass(Db::class);
                 $property = $reflect->getProperty('instance');
                 $property->setAccessible(true);
                 $manager_instance = $property->getValue();
