@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace mon\thinkORM;
 
 use Closure;
-use think\facade\Db;
 use RuntimeException;
 use mon\thinkORM\extend\Query;
 use mon\thinkORM\concern\AutoAttr;
