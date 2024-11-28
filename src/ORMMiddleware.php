@@ -32,7 +32,7 @@ class ORMMiddleware implements MiddlewareInterface
         // 执行响应
         $response = $next($request);
         // 清除sql日志
-        ThinkDb::getDbLog(true);
+        Db::getDbLog(true);
         // 校验事务是否已全部提交
         $this->checkTpUncommittedTransaction();
 
