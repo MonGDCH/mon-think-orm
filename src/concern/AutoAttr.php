@@ -94,7 +94,7 @@ trait AutoAttr
         // 过滤只读字段
         if (!empty($this->readonly)) {
             foreach ($this->readonly as $field) {
-                if (isset($data[$field])) {
+                if (array_key_exists($field, $data)) {
                     unset($data[$field]);
                 }
             }
@@ -146,7 +146,7 @@ trait AutoAttr
                 $value = null;
             }
             // 处理数据字段
-            if (isset($data[$field])) {
+            if (array_key_exists($field, $data)) {
                 $value = $data[$field];
             }
             $result[$field] = $this->setAttr($field, $value, $data);

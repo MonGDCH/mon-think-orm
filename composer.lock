@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "mongdch/mon-util",
-            "version": "1.5.8",
+            "version": "1.5.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MonGDCH/mon-util.git",
-                "reference": "dedcec23e81c1da9389512a5190809e7c0e8e0d4"
+                "reference": "bfb0d70953bd012dcb7c2f76a7dde3cfc59bde3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MonGDCH/mon-util/zipball/dedcec23e81c1da9389512a5190809e7c0e8e0d4",
-                "reference": "dedcec23e81c1da9389512a5190809e7c0e8e0d4",
+                "url": "https://api.github.com/repos/MonGDCH/mon-util/zipball/bfb0d70953bd012dcb7c2f76a7dde3cfc59bde3d",
+                "reference": "bfb0d70953bd012dcb7c2f76a7dde3cfc59bde3d",
                 "shasum": ""
             },
             "require": {
@@ -54,9 +54,9 @@
             ],
             "support": {
                 "issues": "https://github.com/MonGDCH/mon-util/issues",
-                "source": "https://github.com/MonGDCH/mon-util/tree/1.5.8"
+                "source": "https://github.com/MonGDCH/mon-util/tree/1.5.14"
             },
-            "time": "2024-11-26T10:00:07+00:00"
+            "time": "2025-02-27T06:49:21+00:00"
         },
         {
             "name": "psr/container",

@@ -291,7 +291,7 @@ abstract class Dao
         if (!empty($this->allow)) {
             $allowData = [];
             foreach ($this->allow as $field) {
-                if (isset($data[$field])) {
+                if (array_key_exists($field, $data)) {
                     $allowData[$field] = $data[$field];
                 }
             }
@@ -327,7 +327,7 @@ abstract class Dao
             if (!empty($this->allow)) {
                 $allowData = [];
                 foreach ($this->allow as $field) {
-                    if (isset($item[$field])) {
+                    if (array_key_exists($field, $item)) {
                         $allowData[$field] = $item[$field];
                     }
                 }

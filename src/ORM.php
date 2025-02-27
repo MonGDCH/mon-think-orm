@@ -6,9 +6,9 @@ namespace mon\thinkORM;
 
 use Throwable;
 use mon\env\Config;
+use mon\thinkORM\Db;
 use Workerman\Timer;
 use think\Container;
-use mon\thinkORM\Db;
 use Psr\Log\LoggerInterface;
 use mon\thinkORM\extend\DbManager;
 use Psr\SimpleCache\CacheInterface;
