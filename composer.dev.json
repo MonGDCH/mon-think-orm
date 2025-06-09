@@ -20,5 +20,11 @@
         "psr-4": {
             "mon\\thinkORM\\": "src"
         }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.org/"
+        }
     }
 }

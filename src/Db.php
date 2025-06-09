@@ -75,6 +75,8 @@ use think\Facade;
  * @method static array getInstance() 获取所有连接实列
  * @method static void event(string $event, callable $callback) 注册回调方法
  * @method static void trigger(string $event, $params = null) 触发事件
+ * @method static \PDO getPdo() 获取PDO对象
+ * @method static string|array getPk() 获取主键
  */
 class Db extends Facade
 {
@@ -85,6 +87,6 @@ class Db extends Facade
      */
     protected static function getFacadeClass()
     {
-        return 'mon\thinkORM\extend\DbManager';
+        return \mon\thinkORM\extend\DbManager::class;
     }
 }

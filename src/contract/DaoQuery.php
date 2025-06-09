@@ -59,10 +59,9 @@ interface DaoQuery
      *
      * @param array     $data   操作数据
      * @param integer   $limit  每次写入数据限制
-     * @param mixed     $query  查询对象实例
      * @return integer 影响行数
      */
-    public function saveAll(array $data, int $limit = 0);
+    public function saveAll(array $data, int $limit = 0): int;
 
     /**
      * Dao对象get获取单条数据方法支持

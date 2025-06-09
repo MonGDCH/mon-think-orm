@@ -106,10 +106,9 @@ class Query extends \think\db\Query implements DaoQuery
      *
      * @param array     $data   操作数据
      * @param integer   $limit  每次写入数据限制
-     * @param mixed     $query  查询对象实例
      * @return integer 影响行数
      */
-    public function saveAll(array $data, int $limit = 0)
+    public function saveAll(array $data, int $limit = 0): int
     {
         if (!$this->getDao()) {
             throw new RuntimeException('查询对象未绑定Dao对象');

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use mon\thinkOrm\Dao;
+use mon\thinkORM\Dao;
 use mon\util\Instance;
 
 /**

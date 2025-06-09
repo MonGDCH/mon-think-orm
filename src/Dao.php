@@ -11,6 +11,7 @@ use mon\thinkORM\concern\AutoAttr;
 use mon\thinkORM\concern\AutoTime;
 use mon\thinkORM\concern\Validator;
 use mon\thinkORM\contract\DaoQuery;
+use mon\thinkORM\concern\BatchUpdate;
 
 /**
  * Db操作Dao对象
@@ -71,7 +72,7 @@ use mon\thinkORM\contract\DaoQuery;
  */
 abstract class Dao
 {
-    use Validator, AutoTime, AutoAttr;
+    use Validator, AutoTime, AutoAttr, BatchUpdate;
 
     /**
      * 操作表名
@@ -319,7 +320,7 @@ abstract class Dao
      * @param mixed     $query  查询对象实例
      * @return integer 影响行数
      */
-    public function saveAll(array $data, int $limit = 0, Query $query = null)
+    public function saveAll(array $data, int $limit = 0, Query $query = null): int
     {
         $autoTimeData = $this->getAutoTimeData(true);
         foreach ($data as $k => $item) {
