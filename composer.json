@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "topthink/think-orm": "^2.0",
+        "topthink/think-orm": ">2.0",
         "mongdch/mon-util": "^1.4"
     },
     "autoload": {
