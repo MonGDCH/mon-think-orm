@@ -13,6 +13,7 @@
         }
     ],
     "require": {
+        "php": ">=7.4.0",
         "topthink/think-orm": "^2.0.62",
         "mongdch/mon-util": "^1.4"
     },
