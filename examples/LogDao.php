@@ -21,7 +21,7 @@ class LogDao extends Dao
      *
      * @var string
      */
-    protected $table = 'log';
+    protected $table = 'admin';
 
     /**
      * 自动写入时间戳
